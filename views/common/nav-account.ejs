@@ -1,0 +1,12 @@
+<% if(user){%>
+    <li>
+        <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;"> <span class="caret"><&= user.name &></span></a>
+        <ul class="dropdown-menu">
+            <a href="/posts/create">发表文章</a>
+            <a href="/signout">退出登录</a>
+        </ul>
+    </li>
+    <% } else { %>
+        <li><a class="item" href="/signin">登录</a></li>
+        <li><a class="item" href="/signup">注册</a></li>
+<% } %>
