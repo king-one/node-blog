@@ -4,7 +4,6 @@ const checkLogin = require('../middlewares/check').checkLogin
 router.get('/', function (req, res, next) {
     res.send('主页')
 })
-章
 router.post('/create', checkLogin, function (req, res, next) {
     res.send('发表文章')
 })

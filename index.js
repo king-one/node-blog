@@ -2,11 +2,15 @@ const express = require('express')
 const flash = require('connect-flash')
 const session = require('express-session')
 const path = require('path')
-const app = express()
+const MongoStore = require("connect-mongo")(session)
 const indexRouter = require('./routes/index')
 const userRouter = require('./routes/users')
 const config = require('config-lite')(__dirname)
+const routes = require('./routes')
 const pkg = require('./package')
+// mongo 配置
+// mongod --logpath "D:\Program Files\MongoDB\data\log\mongodb.log" --logappend --dbpath "D:\Program Files\MongoDB\data\db" --directoryperdb --serviceName MongoDB --install
+const app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs') //设置模板引擎 ejs
 // 设置模板全局常量
