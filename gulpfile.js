@@ -22,19 +22,6 @@ gulp.task('svg-sprite', function () {
     }))
     .pipe(gulp.dest('./svg-sprite'))
 })
-
-gulp.task('build-less', function () {
-  gulp.src('less/*.less')
-    .pipe(less())
-    .pipe(minifyCSS())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('dist/css'))
-})
-gulp.task("watch", function () {
-  gulp.watch('less/**/*.less', ['build-less'])
-})
 gulp.task('minImage', () =>
     gulp.src('images/**/*')
         .pipe(imagemin())
@@ -52,4 +39,7 @@ gulp.task("pack", function () {
       suffix: '.min'
     }))
     .pipe(gulp.dest('dist/css'))
+})
+gulp.task("watch", function () {
+  gulp.watch('less/**/*.less', ['pack'])
 })

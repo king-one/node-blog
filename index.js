@@ -12,7 +12,7 @@ const pkg = require('./package')
 // mongod --logpath "D:\Program Files\MongoDB\data\log\mongodb.log" --logappend --dbpath "D:\Program Files\MongoDB\data\db" --directoryperdb --serviceName MongoDB --install
 const app = express()
 // 设置静态文件目录
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'dist')))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs') //设置模板引擎 ejs
 // 设置模板全局常量
@@ -23,6 +23,10 @@ app.locals.blog = {
 
 // flash 中间件，用来显示通知
 app.use(flash())
+app.use(require('express-formidable')({
+  uploadDir:path.join(__dirname,'dist/img'),//上传文件目录
+  keepExtensions:true
+}))
 // session 中间件
 app.use(session({
   name: config.session.key, // 设置 cookie 中保存 session id 的字段名称
