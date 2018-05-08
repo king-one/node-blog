@@ -1,25 +1,27 @@
 <%-include('header')%>
     <div class="col-xs-8 col-sm-6 col-md-4 col-lg-2 sign-container">
-        <h2>登录</h2>
-        <div class="input-control has-icon-left">
-            <input id="inputAccountExample1" type="text" class="form-control" placeholder="用户名">
-            <label for="inputAccountExample1" class="input-control-icon-left">
-                <i class="icon icon-user "></i>
-            </label>
-        </div>
-        <div class="input-control has-icon-right">
-            <input id="inputPasswordExample1" type="password" class="form-control" placeholder="密码">
-            <label for="inputPasswordExample1" class="input-control-icon-right">
-                <i class="icon icon-key"></i>
-            </label>
-        </div>
-        <div class="input-control has-icon-left has-icon-right">
-            <input id="inputEmailExample1" type="email" class="form-control" placeholder="密码">
-            <label for="inputEmailExample1" class="input-control-icon-left">
-                <i class="icon icon-envelope "></i>
-            </label>
-            <label for="inputEmailExample1" class="input-control-icon-right">
-                <i class="icon icon-check"></i>
-            </label>
-        </div>
-      </div>
+        <h2>注册</h2>
+        <form method="post" enctype="multipart/form-data" style="width:90%">
+            <div class="input-control has-icon-left">
+                <input type="text" class="form-control" placeholder="用户名" name="name">
+                <label for="inputAccountExample1" class="input-control-icon-left">
+                    <i class="icon icon-user "></i>
+                </label>
+            </div>
+            <div class="input-control has-icon-left">
+                <label for="inputPasswordExample1" class="input-control-icon-left">
+                    <i class="icon icon-key"></i>
+                </label>
+                <input type="password" class="form-control" placeholder="密码" name="password">
+            </div>
+            <div class="input-control has-icon-left">
+                <label for="inputEmailExample1" class="input-control-icon-left">
+                    <i class="icon icon-check"></i>
+                </label>
+                <input type="password" class="form-control" placeholder="确认密码" name="repassword">
+            </div>
+            <div style="text-align: center">
+                <Button type="submit">立即注册</Button>
+            </div>
+        </form>
+    </div>
