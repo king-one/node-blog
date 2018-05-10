@@ -27,6 +27,15 @@ gulp.task('minImage', () =>
         .pipe(imagemin())
         .pipe(gulp.dest('dist/images'))
 );
+gulp.task("build", function () {
+  gulp.src('less/*.less')
+    .pipe(less())
+    .pipe(minifyCSS())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('dist/css'))
+})
 gulp.task("pack", function () {
   gulp.src('less/*.less')
     .pipe(less())
@@ -41,5 +50,5 @@ gulp.task("pack", function () {
     .pipe(gulp.dest('dist/css'))
 })
 gulp.task("watch", function () {
-  gulp.watch('less/**/*.less', ['pack'])
+  gulp.watch('less/**/*.less', ['build'])
 })

@@ -41,7 +41,6 @@ router.post('/', checkNotLogin, function (req, res, next) {
     name: name,
     password: password,
   }
-  console.log(user)
   UserModel.create(user).then(function (result) {
     user = result.ops[0]
     delete user.password

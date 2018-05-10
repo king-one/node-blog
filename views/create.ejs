@@ -1,0 +1,23 @@
+<%- include('header') %>
+    <div class="container" style="margin-top: 50px">
+        <div class="panel create">
+            <div class="panel-heading">
+                文章发表
+            </div>
+            <div class="panel-body">
+                <form method="post">
+                    <div class="input-control">
+                        <label>文章标题</label>
+                        <input type="text" name="title" class="form-control">
+                    </div>
+                    <div class="input-control">
+                        <label>文章内容</label>
+                        <textarea name="content" rows="15" class="form-control"></textarea>
+                    </div>
+                    <div style="text-align: right; margin-top: 10px">
+                        <button type="submit" class="btn">发布</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
